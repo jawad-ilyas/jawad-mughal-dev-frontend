@@ -5,6 +5,7 @@ import emailImg from "../../assets/email.png"
 import mobile from "../../assets/mobile.png"
 import { client } from '../../client'
 import { useForm } from "react-hook-form"
+import { createFooterNewsletter } from './Footer.api'
 
 function Footer() {
   const [isFormSubmitted, setisFormSubmitted] = useState(false)
@@ -13,36 +14,33 @@ function Footer() {
     register,
     handleSubmit,
     watch,
+    reset,
     formState: { errors },
   } = useForm()
   const onSubmit = (data) => {
     console.log(data)
+    setloading(true)
     const { email, message, name } = data;
 
-    const contact = {
-      _type: 'contact',
-      email,
-      message,
-      name
+    console.log("footer section email ", email)
+    console.log("footer section message ", message)
+    console.log("footer section name ", name)
+
+    const createFooterNewsletterFun = async () => {
+      const response = await createFooterNewsletter(data)
+      setisFormSubmitted(true)
+      setloading(false)
+      console.log(response)
     }
-    client.create(contact)
-      .then(() => {
-        setisFormSubmitted(true)
-        setloading(false)
-      }).catch((err) => console.log(err));
+    createFooterNewsletterFun()
+
+
+
+    reset();
 
   }
 
-  // const handleSubmit = () => {
-  //   const contact = {
 
-  //   }
-  //   client.create(contact)
-  //     .then(() => {
-  //       isFormSubmitted(true)
-  //       setloading(false)
-  //     })
-  // }
   return (
     <div className='max-w-2xl md:mx-auto  sm:px-10 sm:py-8 p-4  '>
       <div className='flex flex-col items-center w-full h-full'>
@@ -61,17 +59,17 @@ function Footer() {
         {!isFormSubmitted ?
           <form onSubmit={handleSubmit(onSubmit)} className='mt-8 flex flex-col w-full items-center justify-center'>
             <div className=' w-full flex justify-center  my-2'>
-              <input type='text' placeholder='Your Name' {...register("name", { required: true })} name='name' className='outline-none w-full rounded-md bg-primaryColor py-2 ps-2 font-medium' />
+              <input type='text' placeholder='Your Name' {...register("name")} name='name' className='outline-none w-full rounded-md bg-primaryColor py-2 ps-2 font-medium' />
             </div>
             <div className=' w-full flex justify-center  my-2'>
-              <input type='email' placeholder='Your Email' name='email' {...register("email", { required: true })} className='outline-none w-full rounded-md bg-primaryColor py-2 ps-2 font-medium' />
+              <input type='text' placeholder='Your Email' name='email' {...register("email")} className='outline-none w-full rounded-md bg-primaryColor py-2 ps-2 font-medium' />
             </div>
             <div className=' w-full flex justify-center  my-2'>
-              <textarea placeholder='Your message' name='message' {...register("message", { required: true })} className='outline-none w-full rounded-md bg-primaryColor py-2 ps-2 font-medium' />
+              <textarea placeholder='Your message' name='message' {...register("message")} className='outline-none w-full rounded-md bg-primaryColor py-2 ps-2 font-medium' />
             </div>
             <button type='submit' className='bg-secondaryColor mt-4 text-white rounded p-2' value="Send Message"  >{!loading ? "Send Message" : "Sending ..."}</button>
           </form> : <div>
-            <h3 className='mt-8kk font-semibold text-xl'>Thank You For Getting In Touch</h3>
+            <h3 className='mt-8kk font-semibold text-xl my-4'>Thank You For Getting In Touch</h3>
           </div>}
       </div>
     </div>

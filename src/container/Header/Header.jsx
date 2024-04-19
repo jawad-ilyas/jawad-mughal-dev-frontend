@@ -5,6 +5,13 @@ import profileCircle from "../../assets/circle.svg";
 import flutter from "../../assets/flutter.png";
 import redux from "../../assets/redux.png";
 import sass from "../../assets/sass.png";
+import javascript from "../../assets/javascript.png";
+import node from "../../assets/node.png";
+import androidstudio from "../../assets/androidstudio.png";
+import git from "../../assets/git.png";
+
+import react from "../../assets/reactjs.webp";
+import android from "../../assets/android.webp";
 import './Header.css'
 import AppWrap from '../../Wrapper/AppWrap';
 const scaleVariants = {
@@ -17,7 +24,7 @@ const scaleVariants = {
     }
   }
 };
-const techImages = [flutter, redux, sass, sass, sass];
+const techImages = [androidstudio, node, react, redux, git];
 const Header = () => {
   return (
     <div id='home' className='container mx-auto    pt-40   relative bg-cover bg-no-repeat flex flex-col md:flex-row   justify-between items-start' >
@@ -64,8 +71,8 @@ const Header = () => {
         className='flex flex-row md:flex-col mt-4 justify-center flex-wrap circleImage self-center md:ml-4 w-full h-full z-[5]'
       >
         {techImages.map((circle, index) => (
-          <div className={`rounded-full shadow-xl my-1 bg-white w-16 `} key={index}>
-            <img src={circle} alt={`${index + circle}`} />
+          <div className={`rounded-full shadow-xl my-1 bg-white w-16 p-2 `} key={index}>
+            <img src={circle} alt={`${index + circle}`} className='' />
           </div>
         ))}
       </motion.div>

@@ -12,7 +12,7 @@ const About = () => {
   const fetchAboutData = () => {
 
 
-    axios.get("https://porfilio-website-frontend-api-backend.vercel.app/api/v1/work/showWork")
+    axios.get("http://localhost:8080/api/v1/work/showWork")
       .then((response) => {
         console.log("fetch data into main for about section ", response)
         console.log("fetch data into main for about section ", response.data.data)
@@ -24,13 +24,6 @@ const About = () => {
       })
   }
   useEffect(() => {
-    const query = '*[_type == "about"]';
-    client.fetch(query)
-      .then((data) => {
-        // console.log(data)
-        // console.log(data[0]?.imgUrl?.asset?._ref)
-        // setAbouts(data)
-      })
 
     fetchAboutData();
 
@@ -40,7 +33,7 @@ const About = () => {
   return (
     <div className='container md:mx-auto  sm:px-10 sm:py-8'>
       <div className='m-6 md:m-0'>
-        <h2 className="text-xl md:text-3xl font-semibold mb-4 text-center">I Know That <span class="text-secondaryColor">Good Design</span> means <span class="text-secondaryColor">Good Business</span></h2>
+        <h2 className="text-xl md:text-3xl font-semibold mb-4 text-center">I Know That <span className="text-secondaryColor">Good Design</span> means <span className="text-secondaryColor">Good Business</span></h2>
 
         <div className='grid grid-rows-auto grid-cols-1  lg:grid-cols-4 md:grid-cols-3 gap-5  w-full my-10'
         >
@@ -54,7 +47,7 @@ const About = () => {
               transition={{ duration: 0.5, type: 'tween' }}
 
             >
-              <div >
+              <div key={index}>
                 {/* <img className='size-52' src={urlFor(item?.imgUrl?.asset?._ref + "?h=200")} /> */}
                 <img className='size-52' src={item?.avatar} />
 

@@ -68,7 +68,7 @@ export default function Header() {
 
       >
         {[flutter, redux, sass].map((circle, index) => (
-        <div className={`circle-cmp app__flex  rounded-full shadow-xl bg-whiteColor w-16 h-16 even:w-32 even:h-32`} key={index}>
+          <div className={`circle-cmp app__flex  rounded-full shadow-xl bg-whiteColor w-16 h-16 even:w-32 even:h-32`} key={index}>
             <img src={circle} alt={`${index + circle}`} />
           </div>
         ))}

@@ -63,7 +63,7 @@ function Work() {
   return (
     <div className='container md:mx-auto  sm:px-10 sm:py-8 p-4 '>
       <div>
-        <h2 className="text-xl md:text-3xl font-semibold mb-4 text-center">My Creative <span class="text-secondaryColor">Portfolio</span> Section</h2>
+        <h2 className="text-xl md:text-3xl font-semibold mb-4 text-center">My Creative <span className="text-secondaryColor">Portfolio</span> Section</h2>
         <div className='flex flex-row flex-wrap justify-center w-full h-full mt-12'>
           {portfolioSections?.map((items, index) => (
             <div key={index}

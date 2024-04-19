@@ -1,7 +1,7 @@
 import React from 'react'
 import SocaialMedia from '../components/SocaialMedia';
 import NaviagtionDots from '../components/NaviagtionDots';
-const AppWrap = (Component, idName , classNames) => {
+const AppWrap = (Component, idName, classNames) => {
     return () => (
         <div id={idName} className={`relative ${classNames}`}>
             {/* <SocaialMedia /> */}

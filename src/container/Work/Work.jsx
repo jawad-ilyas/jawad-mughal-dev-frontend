@@ -72,7 +72,7 @@ function Work() {
   return (
     <div className='container md:mx-auto  sm:px-10 sm:py-8 p-4 '>
       <div>
-        <h2 className="text-xl md:text-3xl font-semibold mb-4 text-center">My Creative <span class="text-secondaryColor">Portfolio</span> Section</h2>
+        <h2 className="text-xl md:text-3xl font-semibold mb-4 text-center">My Creative <span className="text-secondaryColor">Portfolio</span> Section</h2>
         <div className='flex flex-row flex-wrap justify-center w-full h-full mt-12'>
           {portfolioSections?.map((items, index) => (
             <div key={index}
@@ -138,7 +138,7 @@ function Work() {
                     <p className='text-sm font-normal  px-4 line-clamp-3'>{work?.projectDescription}</p>
                     <div className=' flex flex-wrap justify-evenly  items-center my-2 px-4'>
                       {/* {work?.projectTags.map(tag => <span className='bg-gray-100 rounded my-1 mx-1   px-1 '>{tag}</span>)} */}
-                      <span className='bg-gray-100 rounded my-1 mx-1   px-1 '>{ work?.projectTags[0]}</span>
+                      <span className='bg-gray-100 rounded my-1 mx-1   px-1 '>{work?.projectTags[0]}</span>
                     </div>
                   </div>
                 </div>
