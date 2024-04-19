@@ -17,7 +17,7 @@ function Testimonail() {
 
   const fetchReviewFun = async () => {
     const review = await fetchReview();
-    console.log('Fetch Review Function ', review)
+    // console.log('Fetch Review Function ', review)
     setTestimonials(review)
   }
   useEffect(() => {
@@ -30,7 +30,7 @@ function Testimonail() {
 
     client.fetch(brandQuery)
       .then((data) => {
-        console.log("brand", data)
+        // console.log("brand", data)
         setBrands(data)
       })
 

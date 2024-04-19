@@ -5,7 +5,7 @@ const fetchProjectCategory = async () => {
         const response = await axios.get("http://localhost:8080/api/v1/projectCategory/showProjectCategrory");
 
         // Log the response data or return it as needed
-        console.log(response.data);
+        // console.log(response.data);
         return response.data;
 
     } catch (error) {
@@ -23,7 +23,7 @@ const fetchProjects = async () => {
         return await axios.get("http://localhost:8080/api/v1/project/fetchProjects")
             .then((response) => {
 
-                console.log("response of the fetch projects ", response?.data)
+                // console.log("response of the fetch projects ", response?.data)
                 return response.data;
 
             })

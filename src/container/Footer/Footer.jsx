@@ -30,7 +30,13 @@ function Footer() {
       const response = await createFooterNewsletter(data)
       setisFormSubmitted(true)
       setloading(false)
-      console.log(response)
+
+      setTimeout(() => {
+        setisFormSubmitted(false)
+
+      }, 1000);
+
+      // console.log(response)
     }
     createFooterNewsletterFun()
 

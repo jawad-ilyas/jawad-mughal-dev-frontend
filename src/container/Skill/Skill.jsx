@@ -17,14 +17,14 @@ function Skill() {
 
     client.fetch(workQuery)
       .then((data) => {
-        console.log(data)
+        // console.log(data)
         setskills(data)
       })
 
     client.fetch(query)
       .then((data) => {
-        console.log(data)
-        console.log(data[0]?.works[0]?.name)
+        // console.log(data)
+        // console.log(data[0]?.works[0]?.name)
         setExperiences(data)
       })
 

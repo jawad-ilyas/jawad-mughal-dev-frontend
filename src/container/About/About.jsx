@@ -14,8 +14,8 @@ const About = () => {
 
     axios.get("http://localhost:8080/api/v1/work/showWork")
       .then((response) => {
-        console.log("fetch data into main for about section ", response)
-        console.log("fetch data into main for about section ", response.data.data)
+        // console.log("fetch data into main for about section ", response)
+        // console.log("fetch data into main for about section ", response.data.data)
 
         setAbouts(response.data.data)
       })

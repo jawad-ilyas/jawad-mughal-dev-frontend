@@ -42,12 +42,12 @@ function Work() {
 
     const fetchProjectCats = async () => {
       const response = await fetchProjectCategory()
-      console.log("Response of the fetch project category ", response.data)
+      // console.log("Response of the fetch project category ", response.data)
       setPortfolioSections(response.data)
     }
     const fetchProjectsFun = async () => {
       const response = await fetchProjects()
-      console.log("Response of the fetch project ", response.data)
+      // console.log("Response of the fetch project ", response.data)
       setWorks(response.data)
       setfilterWork(response.data)
 
