@@ -5,7 +5,7 @@ import urlFor, { client } from '../../client'
 // import ReactToolTip from "react-tooltip"
 import { Tooltip as ReactTooltip } from 'react-tooltip'
 import MotioWrap from '../../Wrapper/MotionWrap'
-import { fetchExperiences } from './Skill.api'
+import { fetchExperiences, fetchSkill } from './Skill.api'
 
 function Skill() {
 
@@ -28,13 +28,19 @@ function Skill() {
     //     // console.log(data[0]?.works[0]?.name)
     //     setExperiences(data)
     //   })
+    
     const fetchExperiencesFun = async () => {
       const response = await fetchExperiences()
       console.log("Response of the fetch Wokr Experience ", response.data)
       setExperiences(response.data)
     }
     fetchExperiencesFun();
-
+    const fetchSkillFun = async () => {
+      const response = await fetchSkill()
+      console.log("Response of the fetch Wokr Experience ", response.data)
+      setskills(response.data)
+    }
+    fetchSkillFun();
   }, [])
 
   return (
@@ -52,10 +58,10 @@ function Skill() {
             >
               <div className='' key={index}>
 
-                <img src={urlFor(skill?.icon)} className={`${skill.bgColor} h-28 w-28 bg-white rounded-full p-4 mx-4 shadow-2xl `} />
+                <img src={skill?.icon} className={` h-28 w-28 bg-white rounded-full p-4 mx-4 shadow-2xl `} />
               </div>
 
-              <p className='mt-1 capitalize font-medium text-center'>{skill.name}</p>
+              <p className='mt-1 capitalize font-medium text-center'>{skill.skillName}</p>
             </motion.div>
           ))}
         </motion.div>
