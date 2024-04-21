@@ -5,6 +5,7 @@ import urlFor, { client } from '../../client'
 // import ReactToolTip from "react-tooltip"
 import { Tooltip as ReactTooltip } from 'react-tooltip'
 import MotioWrap from '../../Wrapper/MotionWrap'
+import { fetchExperiences } from './Skill.api'
 
 function Skill() {
 
@@ -12,7 +13,7 @@ function Skill() {
   const [experiences, setExperiences] = useState([])
   useEffect(() => {
 
-    const query = '*[_type == "experiences"]';
+    // const query = '*[_type == "experiences"]';
     const workQuery = '*[_type == "skills"]';
 
     client.fetch(workQuery)
@@ -21,12 +22,18 @@ function Skill() {
         setskills(data)
       })
 
-    client.fetch(query)
-      .then((data) => {
-        // console.log(data)
-        // console.log(data[0]?.works[0]?.name)
-        setExperiences(data)
-      })
+    // client.fetch(query)
+    //   .then((data) => {
+    //     // console.log(data)
+    //     // console.log(data[0]?.works[0]?.name)
+    //     setExperiences(data)
+    //   })
+    const fetchExperiencesFun = async () => {
+      const response = await fetchExperiences()
+      console.log("Response of the fetch Wokr Experience ", response.data)
+      setExperiences(response.data)
+    }
+    fetchExperiencesFun();
 
   }, [])
 

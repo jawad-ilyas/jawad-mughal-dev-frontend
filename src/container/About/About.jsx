@@ -33,7 +33,7 @@ const About = () => {
   return (
     <div className='container md:mx-auto  sm:px-10 sm:py-8'>
       <div className='m-6 md:m-0'>
-        <h2 className="text-xl md:text-3xl font-semibold mb-4 text-center">I Know That <span className="text-secondaryColor">Good Design</span> means <span className="text-secondaryColor">Good Business</span></h2>
+        <h2 className="text-xl md:text-3xl font-semibold mb-4 text-center">I Know That <span className="text-secondaryColor">Good Knowlege</span> means <span className="text-secondaryColor">Good Business</span></h2>
 
         <div className='grid grid-rows-auto grid-cols-1  lg:grid-cols-4 md:grid-cols-3 gap-5  w-full my-10'
         >
