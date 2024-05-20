@@ -13,14 +13,14 @@ function Skill() {
   const [experiences, setExperiences] = useState([])
   useEffect(() => {
 
-    // const query = '*[_type == "experiences"]';
-    const workQuery = '*[_type == "skills"]';
+    // // const query = '*[_type == "experiences"]';
+    // const workQuery = '*[_type == "skills"]';
 
-    client.fetch(workQuery)
-      .then((data) => {
-        // console.log(data)
-        setskills(data)
-      })
+    // client.fetch(workQuery)
+    //   .then((data) => {
+    //     // console.log(data)
+    //     setskills(data)
+    //   })
 
     // client.fetch(query)
     //   .then((data) => {
@@ -46,7 +46,7 @@ function Skill() {
   return (
     <div className='container md:mx-auto  sm:px-10 sm:py-8 p-4 '>
       <h2 className="text-xl md:text-3xl font-semibold mb-4 text-center">Skill & Experience</h2>
-      <div className='flex md:flex-row flex-col  w-full py-16'>
+      <div className='flex md:flex-row flex-col items-center  w-full py-16'>
         <motion.div className='flex flex-row items-center justify-center  flex-wrap w-full  md:w-1/2'>
           {skills?.map((skill, index) => (
             <motion.div
@@ -56,9 +56,9 @@ function Skill() {
               key={index}
 
             >
-              <div className='' key={index}>
+              <div className='my-2' key={index}>
 
-                <img src={skill?.icon} className={` h-28 w-28 bg-white rounded-full p-4 mx-4 shadow-2xl `} />
+                <img src={skill?.icon} className={` h-28 w-28 bg-white rounded-full p-4 mx-4 shadow-2xl object-contain `} />
               </div>
 
               <p className='mt-1 capitalize font-medium text-center'>{skill.skillName}</p>
@@ -68,7 +68,7 @@ function Skill() {
 
         <motion.div className='md:w-1/2 h-full mt-16 md:mt-0'>
           {experiences.map((item, index) => (
-            <div className='flex items-center justify-center md:justify-start ms-8' key={index}>
+            <div className='flex items-center justify-center  md:justify-start ms-8' key={index}>
               <div className='me-8'>
                 <p className='text-secondaryColor font-medium text-xl'>{item.year}</p>
               </div>
