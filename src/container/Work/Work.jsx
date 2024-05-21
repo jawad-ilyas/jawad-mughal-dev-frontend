@@ -123,7 +123,7 @@ function Work() {
                   </motion.div> */}
                   {/* </div> */}
                   <div className='relative group'>
-                    <img src={about} className='w-96 h-68 object-cover rounded-lg transition duration-500 transform ' alt="About 1" />
+                    <img src={work?.projectImage} className='w-96 h-68 object-cover rounded-lg transition duration-500 transform ' alt="About 1" />
                     <div className='absolute inset-0 bg-black opacity-0 group-hover:opacity-70 transition-opacity rounded-lg'>
                       <div className='flex flex-row justify-center items-center w-full h-full'>
                         <a href={work.projectDeployLink} target='_blank'><IoEyeSharp className='text-white me-2' size={30} /></a>
